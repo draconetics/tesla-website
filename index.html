@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<style>
+html {
+  scroll-behavior: smooth;
+}    
+    #container {
+  scroll-snap-type: y mandatory;
+  border: 2px solid var(--gs0);
+  border-radius: 8px;
+  position: relative;
+}
+
+#container section {
+  scroll-snap-align: start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  height: 100vh;
+}
+#container section:nth-child(1) {
+  background: hotpink;
+  color: white;
+}
+#container section:nth-child(2) {
+  background: azure;
+}
+#container section:nth-child(3) {
+  background: blanchedalmond;
+}
+#container section:nth-child(4) {
+  background: lightcoral;
+  color: white;
+}
+</style>
+<body>
+    <div id="menu">
+        <a href="#1">section1</a>
+        <a href="#2">section2</a>
+        <a href="#3">section3</a>
+        <a href="#4">section4</a>
+    </div>
+    <div id="container">
+        <section id="1">1</section>
+        <section id="2">2</section>
+        <section id="3">3</section>
+        <section id="4">4</section>
+    </div>
+    <button onClick="toTheTop()">top</button>
+    <button onClick="goCarousel('previous')">previous</button>
+    <button onClick="goCarousel('next')">next</button>
+
+
+<script>
+    function toTheTop() {
+        window.scrollTo(0, 0);
+    }
+    
+    const sections = document.querySelectorAll('section[id]')
+    
+    function scrollActive(){
+        const scrollY = window.pageYOffset;//it returns the number of pixels the document is currently scrolled along the vertical axis
+
+        for(let i = 0; i< sections.length; i++){
+            let current = sections[i];
+            const sectionHeight = current.offsetHeight//get height of an element
+            const sectionTop = current.offsetTop - 50;
+            sectionId = current.getAttribute('id')
+            console.log(sectionId)
+            console.log(`${scrollY} > ${sectionTop} && ${scrollY} <= ${sectionTop} + ${sectionHeight}`)
+
+            if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
+                console.log(sectionId);
+                if(i+1 < sections.length)
+                    return window.scrollTo(0,sections[i+1].offsetTop);
+            }else{
+                console.log('not section : '+sectionId)
+            }
+        }
+}
+window.addEventListener('scroll', scrollActive)
+</script>
+</body>
+
+</html>
