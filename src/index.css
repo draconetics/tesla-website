@@ -1,19 +1,40 @@
+@font-face {
+  font-family: 'Tesla';
+  src: url(./fonts/Legendum.ttf);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+:root{
+  --color--white:#fff;
+  --color--black: #000;
+  --color--grey20: #393c41;
+  --color--grey30: #5c5e62;
+  --color--grey35: #757575;
+  --color--grey50: #d0d1d2;
+  --color--grey60: #eee;
+}
+
 body {
 
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Tesla','Roboto',sans-serif;
+  letter-spacing: .1rem;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+ul{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  color: var(--black);
 }

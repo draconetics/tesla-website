@@ -1,0 +1,36 @@
+.section02__top{
+    margin-top: 130px;
+}
+
+.section02__shop{
+    display: block;
+    padding: .8rem 3rem;
+    width: 270px;
+    border-radius: 2rem;
+    text-transform: uppercase;
+    font-size: .7rem;
+    margin:0 1rem;
+    font-weight: 600;
+    color: var(--color--white);
+    background-color: var(--color--black);
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 15%;
+}
+
+.section02__menu{
+    width: fit-content;
+    display:flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section02__menu li{
+    margin: 0 .5rem;
+    font-size: .8rem;
+}

@@ -1,11 +1,10 @@
+import Fullpage from './components/delete/FullPage';
 import Main from './components/Main';
-import Fullpage from './components/FullPage';
-import Scroll from './components/Scroll';
 import './App.css';
 function App() {
   return (
     <div className="App">
-      <Scroll />
+      <Main />
     </div>
   );
 }
