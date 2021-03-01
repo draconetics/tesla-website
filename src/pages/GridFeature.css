@@ -1,0 +1,40 @@
+.grid-feature{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 6rem 2rem;
+    background-color: var(--color--black);
+}
+
+.grid-feature li{
+    display: flex;
+}
+
+.grid-feature li img{
+    width: 50%;
+}
+
+.grid-feature li div{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    font-size: .8rem;
+    color: var(--color--white)
+}
+.grid-feature li div h2{
+    font-size: .8rem;
+    margin: 1rem 0;
+}
+
+.grid-feature__content-right{
+    text-align: left;
+    padding-top: 5rem;
+    padding-right: 12rem;
+    padding-left: 4rem;
+}
+
+.grid-feature__content-left{
+    padding-top: 5rem;
+    padding-left: 12rem;
+    padding-right: 4rem;
+}

@@ -1,0 +1,42 @@
+.spring-slider__row-space{
+    height: 10%;
+    width: 100%;
+    background-color: var(--color--black);
+}
+.spring-slider{
+    position: relative;
+    width: 100%;
+    height: 70%;
+}
+
+.spring-slider img{
+    width: 100%;
+    height: 100%;
+}
+
+.spring-slider__content{
+    height: 20%;
+    background-color: var(--color--black);
+    display:flex;
+}
+
+.spring-slider__right-arrow,
+.spring-slider__left-arrow{
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    right: 4%;
+    z-index: 1;
+    color:var(--color--white);
+    font-size: .8rem;
+    padding: .7rem .9rem;
+    border: 2px solid var(--color--white);
+    background-color: var(--color--black);
+    cursor: pointer;
+}
+
+.spring-slider__left-arrow{
+    right:unset;
+    left: 4%;
+}
+

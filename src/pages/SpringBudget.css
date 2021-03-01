@@ -1,0 +1,18 @@
+.spring-budget{
+    width: 25%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 2rem;
+}
+.spring-budget div{
+    width: 10px;
+    height: 10px;
+    margin: .25rem;
+    border-radius: 50%;
+    border: 1px solid var(--color--white);
+    cursor: pointer;
+}
+
+.spring-budget div.active{
+    background-color: var(--color--white);
+}

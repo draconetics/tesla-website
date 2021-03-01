@@ -1,0 +1,12 @@
+.spring-slider-note{
+    color:white;
+    width: 75%;
+    text-align: left;
+    padding: 2rem;
+}
+
+
+.spring-slider-note div{
+    margin: 1rem 0;
+    font-size: .9rem;
+}

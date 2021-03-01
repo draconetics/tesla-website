@@ -20,6 +20,7 @@ export default function Section02() {
           <li>Forums</li>
           <li>Locations</li>
         </ul>
+        <div className="section02__tesla">Tesla 2021</div>
       </div>
     </>
   );

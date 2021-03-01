@@ -1,16 +1,45 @@
 import React, { Component } from 'react'
 import ScrollSnap from 'scroll-snap'
-import { Fade, Bounce } from "react-awesome-reveal";
 import Menu from  './Menu'
-
-import './Main.css';
-import FirstSection from './Section01';
 import Section01 from './Section01';
 import Section02 from './Section02';
+
+import './Main.css';
 
 function callback() {
   console.log('snapped')
 }
+
+const list = [
+  {
+    mob:'/img/ms-homepage-mobile.jfif',
+    pc:'/img/ms-homepage-desktop.jfif'
+  },
+  {
+    mob:'/img/Mobile-ModelY.jfif',
+    pc:'/img/Desktop-ModelY.jfif'
+  },
+  {
+    mob:'/img/m3-homepage-mobile.jfif',
+    pc:'/img/m3-homepage-desktop.jfif'
+  },
+  {
+    mob:'/img/mx-homepage-mobile.jfif',
+    pc:'/img/mx-homepage-desktop.jfif'
+  },
+  {
+    mob:'/img/Mobile-SolarPanels.jfif',
+    pc:'/img/Desktop-SolarPanels.jfif'
+  },
+  {
+    mob:'/img/solar-roof-hero-mobile.jfif',
+    pc:'/img/solar-roof-hero-desktop.jfif'
+  },
+  {
+    mob:'/img/Mobile-Accessories.jfif',
+    pc:'/img/Desktop-Accessories.jfif'
+  },
+]
 
 export default class Main extends Component {
   constructor(props){
@@ -72,47 +101,48 @@ export default class Main extends Component {
   }
 
   componentDidMount() {
-    //this.initSectionList();
     this.initObservers();
     this.bindScrollSnap();
   }
 
   render() {
+    const isMobile = window.innerWidth <= 600;
     return (
+      <>
+      <Menu isMenuFixed={this.props.isMenuFixed}/>
       <div id="container" ref={this.container}>
-        <Menu />
         <section 
           className="page" 
           ref={this.sectionList[0]}
-          style={{ backgroundImage: `url(${process.env.PUBLIC_URL + '/img/ms-homepage-desktop.jfif'})`}}
+          style={{ backgroundImage: `url(${process.env.PUBLIC_URL + (isMobile?list[0].mob:list[0].pc)})`}}
         >
           <Section01 model='Model S' buttonLeft='custom order' buttonRight='existing inventory' />
         </section>
         <section 
           className="page" 
           ref={this.sectionList[1]}
-          style={{ backgroundImage: `url(${process.env.PUBLIC_URL + '/img/Desktop-ModelY.jfif'})`}}
+          style={{ backgroundImage: `url(${process.env.PUBLIC_URL + (isMobile?list[1].mob:list[1].pc)})`}}
         >
           <Section01 model='Model Y' buttonLeft='custom order' buttonRight='learn more' />
         </section>
         <section 
           className="page" 
           ref={this.sectionList[2]}
-          style={{ backgroundImage: `url(${process.env.PUBLIC_URL + '/img/m3-homepage-desktop.jfif'})`}}
+          style={{ backgroundImage: `url(${process.env.PUBLIC_URL + (isMobile?list[2].mob:list[2].pc)})`}}
         >
           <Section01 model='Model 3' buttonLeft='custom order' buttonRight='existing inventory' />
         </section>
         <section 
           className="page" 
           ref={this.sectionList[3]}
-          style={{ backgroundImage: `url(${process.env.PUBLIC_URL + '/img/mx-homepage-desktop.jfif'})`}}
+          style={{ backgroundImage: `url(${process.env.PUBLIC_URL + (isMobile?list[3].mob:list[3].pc)})`}}
         >
           <Section01 model='Model X' buttonLeft='custom order' buttonRight='existing inventory' />
         </section>
         <section 
           className="page" 
           ref={this.sectionList[4]}
-          style={{ backgroundImage: `url(${process.env.PUBLIC_URL + '/img/Desktop-SolarPanels.jfif'})`}}
+          style={{ backgroundImage: `url(${process.env.PUBLIC_URL + (isMobile?list[4].mob:list[4].pc)})`}}
         >
           <Section01 
             model='Lowest Cost Solar Panels in America' 
@@ -123,7 +153,7 @@ export default class Main extends Component {
         <section 
           className="page" 
           ref={this.sectionList[5]}
-          style={{ backgroundImage: `url(${process.env.PUBLIC_URL + '/img/solar-roof-hero-desktop.jfif'})`}}
+          style={{ backgroundImage: `url(${process.env.PUBLIC_URL + (isMobile?list[5].mob:list[5].pc)})`}}
         >
           <Section01 
             model='Solar for New Roofs' 
@@ -134,11 +164,12 @@ export default class Main extends Component {
         <section 
           className="page last-page" 
           ref={this.sectionList[6]}
-          style={{ backgroundImage: `url(${process.env.PUBLIC_URL + '/img/Desktop-Accessories.jfif'})`}}
+          style={{ backgroundImage: `url(${process.env.PUBLIC_URL + (isMobile?list[6].mob:list[6].pc)})`}}
         >
           <Section02 />
         </section>
       </div>
+      </>
     )
   }
 }

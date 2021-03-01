@@ -1,0 +1,17 @@
+.powertrain__image-container{
+    width:80%;
+    margin: auto;
+}
+
+.powertrain__image{
+    width:100%;
+    opacity:1;
+    transition: all 1s ease;
+}
+
+.powertrain__image.powertrain__hide{
+    opacity:0;
+}
+.powertrain__image.powertrain__show{
+    opacity:1;
+}
