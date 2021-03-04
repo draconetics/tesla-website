@@ -1,17 +1,123 @@
-.powertrain__image-container{
-    width:80%;
-    margin: auto;
+.powertrain {
+  width: 100%;
+  background-color: var(--color--grey70);
+  padding: 3rem 0;
 }
 
-.powertrain__image{
-    width:100%;
-    opacity:1;
-    transition: all 1s ease;
+.powertrain__container {
+  width: 80%;
+  max-width: 1200px;
+  margin: auto;
+  text-align: left;
 }
 
-.powertrain__image.powertrain__hide{
-    opacity:0;
+.powertrain__electric {
+  width: 100%;
+  padding: 1rem 7rem 3rem 7rem;
 }
-.powertrain__image.powertrain__show{
-    opacity:1;
+
+.powertrain__electric h2 {
+  padding: 1rem 0;
+}
+
+.powertrain__electric p {
+  font-size: 0.8rem;
+}
+/**********************powertrain image switch****************************/
+
+.powertrain__image-container {
+  width: 100%;
+  position: relative;
+}
+
+.powertrain__image-container.fit-image {
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.powertrain__image {
+  width: 100%;
+  opacity: 1;
+  transition: all 1.5s ease;
+}
+
+.powertrain__image.powertrain__hide {
+  opacity: 0;
+}
+.powertrain__image.powertrain__show {
+  opacity: 1;
+}
+/******************powertrain-features*********************/
+.powertrain__features {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 75%;
+  margin: 1.5rem auto 5rem auto;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.powertrain__features .square1,
+.powertrain__features .square2 {
+  border-top: 4px solid var(--color--grey30);
+  padding: 1rem;
+  width: 45%;
+  position: relative;
+  min-height: 150px;
+}
+
+.powertrain__features .square1 h2,
+.powertrain__features .square2 h2 {
+  font-size: 1rem;
+}
+
+.powertrain__features .square1 p,
+.powertrain__features .square2 p {
+  font-size: .8rem;
+  text-align: left;
+  line-height: .9rem;
+  margin: .5rem 0;
+ 
+}
+
+.powertrain__features .square1 .square-info,
+.powertrain__features .square2 .square-info {
+    font-family: Arial, Helvetica, sans-serif;
+    display:flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.powertrain__features .square1 .square-info h4,
+.powertrain__features .square2 .square-info h4{
+    font-size: 1.5rem;
+}
+
+.powertrain__features .square1 .square-info p,
+.powertrain__features .square2 .square-info p{
+    margin:0;
+    text-align: center;
+}
+
+.powertrain__features .square1 .square-info{
+    margin: 2rem 0;
+}
+
+
+.powertrain__features .square1::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 4px solid var(--color--grey30);
+  z-index: 1;
+  transition: all 0.4s linear;
+  pointer-events: none;
+}
+
+.powertrain__features .square1.move::after {
+  left: 122.23%;
 }

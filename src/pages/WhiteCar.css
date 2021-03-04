@@ -1,0 +1,77 @@
+.whitecar{
+    height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.whitecar__car{
+    order:2;
+    width: 50%;
+    height: 100%;
+    background-color: var(--color--white);
+    background-repeat: no-repeat;
+    background-size: 120%;
+    background-position: left center;
+}
+
+.whitecar__buttons{
+    width:50%;
+    order:1;
+}
+
+.whitecar__buttons h2{
+    font-size: 1.5rem;
+}
+
+.whitecar__buttons div{
+    text-align: right;
+}
+
+
+.whitecar__buttons button{
+    text-transform: uppercase;
+    padding: .7rem 0;
+    border-radius: 2rem;
+    font-size: .9rem;
+    width: 180px;
+    margin: 1rem .5rem;
+    outline: none;
+    background-color: var(--color--white);
+    cursor: pointer;
+    transition: color .25s ease;
+}
+
+
+.whitecar__buttons button:hover{
+    background-color: var(--color--grey20);
+    color: var(--color--white);
+}
+/******************footer**********************/
+
+.whitecar__footer{
+    background-color:var(--color--white);
+    width: 100%;
+    position: absolute;
+    bottom: 1.5rem;
+}
+.whitecar__footer ul{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.whitecar__footer ul li{
+    margin: 0 1rem;
+    font-size: .8rem;
+    cursor: pointer;
+}

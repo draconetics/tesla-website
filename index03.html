@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        height: 100vh;
+        width: 80%;
+        margin:0 auto;
+        background-color: aquamarine;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .container a{
+        width: 40%;
+        height: 200px;
+        background-color: bisque;
+        position: relative;
+    }
+    .square1:after{
+        content:'';
+        position: absolute;
+        top:0;
+        left:0;
+        width: 100%;
+        height: 100%;
+        transition:all 1s ease;
+        border:1px solid black;
+        z-index:1;
+        pointer-events: none;
+    }
+    
+    a.square1.animate:after{
+        left:150%;
+    }
+
+    
+/*     a.square1.animate-left:after{
+        transform: translateX(0%);
+    } */
+/* 
+
+    button{
+        height: 100px;
+    } */
+</style>
+<body>
+    <div class="container">
+        <a class="square1" onclick="left()">uno</a>
+        <a class="square2" onclick="right()">dos</a>
+    </div>
+    <button onclick="myFunction()">Click me</button>
+    <script>
+
+        function left() {
+        console.log('left')
+        document.getElementsByClassName('square1')[0].classList.remove('animate');
+        }
+
+function right() {
+console.log('right')
+document.getElementsByClassName('square1')[0].classList.add('animate');
+}
+    </script>
+</body>
+</html>
